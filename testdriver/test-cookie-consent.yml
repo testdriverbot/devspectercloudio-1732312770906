@@ -1,0 +1,24 @@
+version: 4.1.27
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Locate the "Accept" button on the cookie consent popup.
+    commands:
+      - command: hover-text
+        text: ALLES AKZEPTIEREN
+        description: accept button on the cookie consent popup
+        action: hover
+  - prompt: Click the "Accept" button.
+    commands:
+      - command: hover-text
+        text: ALLES AKZEPTIEREN
+        description: accept button on the cookie consent popup
+        action: click
+  - prompt: >-
+      Assert that the cookie consent popup is dismissed.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: the cookie consent popup is dismissed
